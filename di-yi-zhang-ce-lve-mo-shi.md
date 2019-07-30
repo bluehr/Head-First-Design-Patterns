@@ -10,11 +10,11 @@ description: 设计模式入门
 
 为了复用呱呱叫和游泳的方法，使用继承
 
-![&#x4F7F;&#x7528;&#x7EE7;&#x627F;&#x8FBE;&#x5230;&#x4EE3;&#x7801;&#x590D;&#x7528;](.gitbook/assets/image%20%285%29.png)
+![&#x4F7F;&#x7528;&#x7EE7;&#x627F;&#x8FBE;&#x5230;&#x4EE3;&#x7801;&#x590D;&#x7528;](.gitbook/assets/image%20%286%29.png)
 
 现在来了新需求，给鸭子加上飞的功能。
 
-![&#x7ED9;&#x7236;&#x7C7B;&#x52A0;&#x4E0A;fly&#x65B9;&#x6CD5;](.gitbook/assets/image%20%2813%29.png)
+![&#x7ED9;&#x7236;&#x7C7B;&#x52A0;&#x4E0A;fly&#x65B9;&#x6CD5;](.gitbook/assets/image%20%2814%29.png)
 
 ### **问题来了，某些鸭子不该拥有这个fly方法**
 
@@ -26,7 +26,7 @@ description: 设计模式入门
 
 会飞的鸭子就实现Flable接口，会叫的就实现Quackable接口
 
-![](.gitbook/assets/image%20%289%29.png)
+![](.gitbook/assets/image%20%2810%29.png)
 
 其实也是相当崩溃的，这几乎没有实现代码复用。
 
@@ -40,17 +40,17 @@ description: 设计模式入门
 
 我们先将变化的部分抽取出来。
 
-![](.gitbook/assets/image%20%282%29.png)
+![](.gitbook/assets/image%20%283%29.png)
 
 飞行功能可能会变化很大，我们可以根据变化来给它多个实现。
 
-![](.gitbook/assets/image%20%2814%29.png)
+![](.gitbook/assets/image%20%2815%29.png)
 
 **在鸭子类中组合飞行和呱呱叫行为**
 
-![&#x7EC4;&#x5408;&#x884C;&#x4E3A;&#x7684;&#x9E2D;&#x5B50;&#x7C7B;](.gitbook/assets/image%20%287%29.png)
+![&#x7EC4;&#x5408;&#x884C;&#x4E3A;&#x7684;&#x9E2D;&#x5B50;&#x7C7B;](.gitbook/assets/image%20%288%29.png)
 
-![&#x6700;&#x7EC8;&#x8BBE;&#x8BA1;&#x5B8C;&#x6210;&#x540E;&#x7684;&#x9E2D;&#x5B50;&#x7C7B;](.gitbook/assets/image%20%2810%29.png)
+![&#x6700;&#x7EC8;&#x8BBE;&#x8BA1;&#x5B8C;&#x6210;&#x540E;&#x7684;&#x9E2D;&#x5B50;&#x7C7B;](.gitbook/assets/image%20%2811%29.png)
 
 **这样的设计，可以让飞行或者呱呱叫的方法被其他对象复用，即使新增了一些行为，也不会影响到已经使用飞行行为的鸭子类**
 
