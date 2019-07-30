@@ -147,6 +147,20 @@ public class WeatherData implements Subject {
 }
 ```
 
+#### 测试
+
+```java
+public class ObserverTest {
+    public static void main(String[] args) {
+        WeatherData weatherData = new WeatherData();
+        DisplayOne displayOne = new DisplayOne(weatherData);
+        DisplayTwo displayTwo = new DisplayTwo(weatherData);
+        weatherData.setValue(40.0f, 123456f);
+        weatherData.setValue(50.5f, 321f);
+    }
+}
+```
+
 ### JDK内置观察者模式
 
 内置的观察者有一个缺点，Observable是一个类，导致我们的“主题”对象必须继承自它，又因为Java不支持多继承，所以限制了“主题”对象的使用场景。
